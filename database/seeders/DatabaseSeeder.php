@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use function Laravel\Prompts\password;
+
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
@@ -18,8 +20,9 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'lukman',
+            'email' => 'lukman@gmail.com',
+            'password' => 'qwertyuiop'
         ]);
     }
 }
