@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\ProductCategoryImageController;
 use App\Http\Controllers\Api\V1\CustomerController;
 use App\Http\Controllers\Api\V1\ProductController;
 use App\Http\Controllers\Api\V1\ProductImageController;
+use App\Http\Controllers\Api\V1\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
@@ -22,5 +23,7 @@ Route::prefix('v1')->group(function () {
         Route::post('products/{productId}/image', [ProductImageController::class, 'store']);
 
         Route::apiResource('customers', CustomerController::class);
+
+        Route::apiResource('transactions', TransactionController::class)->only(['index', 'store', 'show']);
     });
 });
